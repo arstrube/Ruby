@@ -11,7 +11,7 @@ ECHO = $(ECHO1:0=@echo)
 
 #### Start of system configuration section. ####
 
-srcdir = /C/data/00_Dev/06_Faking/Ruby/RubyC
+srcdir = .
 topdir = /C/data/_DevTools/Ruby193/include/ruby-1.9.1
 hdrdir = /C/data/_DevTools/Ruby193/include/ruby-1.9.1
 arch_hdrdir = C:/data/_DevTools/Ruby193/include/ruby-1.9.1/$(arch)
@@ -119,10 +119,10 @@ extout_prefix =
 target_prefix = 
 LOCAL_LIBS = 
 LIBS = $(LIBRUBYARG_SHARED)  -lshell32 -lws2_32 -limagehlp -lshlwapi  
-SRCS = hello.c
-OBJS = hello.o
-TARGET = hello
-TARGET_NAME = hello
+SRCS = libc_wrap.c
+OBJS = libc_wrap.o
+TARGET = libc
+TARGET_NAME = libc
 TARGET_ENTRY = Init_$(TARGET_NAME)
 DLLIB = $(TARGET).so
 EXTSTATIC = 
@@ -173,7 +173,7 @@ install-rb-default: pre-install-rb-default
 pre-install-rb: Makefile
 pre-install-rb-default: Makefile
 pre-install-rb-default:
-	$(ECHO) installing default hello libraries
+	$(ECHO) installing default libc libraries
 ./.RUBYARCHDIR.time:
 	$(Q) $(MAKEDIRS) $(RUBYARCHDIR)
 	$(Q) $(TOUCH) $@

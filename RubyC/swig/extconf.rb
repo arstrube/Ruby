@@ -1,0 +1,5 @@
+require 'mkmf'
+
+dir_config('libc')
+
+create_makefile('libc')
