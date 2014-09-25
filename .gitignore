@@ -1,0 +1,5 @@
+*.o
+*.so
+Makefile
+*.def
+*_wrap.c
