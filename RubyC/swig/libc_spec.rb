@@ -28,7 +28,17 @@ module Libc
     end
     
     describe "::fopen" do
-      it "can open a file for reading" 
+      it "can open a file for reading" do
+        s = "enjoy\nthe new\nday\n"
+        name = "_tmp_.txt"
+        f = File.new(name, "w")
+        f.write(s)
+        f.close 
+        buffer=Libc.malloc(s.length)
+        f = Libc.fopen(name, "r")
+        Libc.fread(buffer, 0, s.length, f)
+        # delete file
+      end
       it "can be opened for writing"
     end
     
