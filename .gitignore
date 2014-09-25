@@ -3,3 +3,4 @@
 Makefile
 *.def
 *_wrap.c
+test_dst.txt
