@@ -14,3 +14,4 @@ end
 
 Libc.fclose(f1)
 Libc.fclose(f2)
+Libc.free(buffer)

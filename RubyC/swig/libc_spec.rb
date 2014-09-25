@@ -1,15 +1,49 @@
 require './libc'
 
-describe "Using Libc" do
-  context "memory" do
-    it "can be allocated"
-    it "can be freed"
+module Libc
+
+  describe Libc do
+  
+    describe "::malloc" do
+      it "can allocate memory" do
+        expect(buffer=Libc.malloc(12)).not_to eq(nil)
+        Libc.free(buffer)
+      end
+      it "shall return 0 when out of memory" do
+        expect(buffer=Libc.malloc(4200000000)).to eq(nil)
+        Libc.free(buffer)
+      end
+    end
+    
+    describe "::free" do
+      buffer=Libc.malloc(13)
+      it "can release allocated memory" do
+        Libc.free(buffer)
+        # actually, this is a pretty stupid method to test :(
+      end
+      it "will do nothing when pointer is invalid" do
+        Libc.free(nil)
+        # also not the best candidate for testing
+      end
+    end
+    
+    describe "::fopen" do
+      it "can open a file for reading" 
+      it "can be opened for writing"
+    end
+    
+    describe "::fread" do
+      it "can read from a file"
+    end
+    
+    describe "::fwrite" do
+      it "can be write to a file"
+    end
+    
+    describe "::fclose" do
+      it "can close a file"
+    end
+    
   end
-  context "a file" do
-    it "can be opened for reading" 
-    it "can be opened for writing"
-    it "can be read"
-    it "can be closed"
-    it "can be written"
-  end
+  
 end

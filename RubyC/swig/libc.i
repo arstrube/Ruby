@@ -6,3 +6,4 @@ int fwrite(void *, size_t, size_t, FILE *);
 int fclose(FILE *);
 
 void *malloc(size_t);
+void free(void *);
