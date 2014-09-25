@@ -9,5 +9,6 @@ irb(main):003:0> require './hello'
 
 IRB INPUT
 =========
-
-require './hello';h=Hello::MyFile.new('hello.c')
+1. 
+2. require './hello';h=Hello::MyFile.new('hello.c')
+3. require './hello';h=Hello::World.new;h.print_string('Hello World\n')
